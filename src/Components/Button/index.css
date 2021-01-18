@@ -1,0 +1,33 @@
+button {
+  height: 24px;
+  padding: 0px 8px;
+  color: black;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ff99a3;
+  color: #fffcf9;
+}
+
+button:active {
+  background-color: #ff707e;
+}
+
+button.search {
+  background-color: #1e857c;
+  color: #fffcf9;
+}
+
+button.search:hover {
+  background-color: #fffcf9;
+  color: #1e857c;
+  border: 2px solid #1e857c;
+}
+
+button.search:active {
+  color: #0f433e;
+  border: 2px solid #0f433e;
+}

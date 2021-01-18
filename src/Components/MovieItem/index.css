@@ -1,0 +1,36 @@
+.movieItem {
+  background-color: #8b5573;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px;
+  height: 30px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+}
+
+h4 {
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
