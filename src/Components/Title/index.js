@@ -1,10 +1,12 @@
 import React from 'react';
 import './index.css';
 
-function Title({ text }) {
+function Title({ titleText, subtitleText, explaination }) {
     return (
         <div className="title">
-           <h1>{text}</h1> 
+           <h1>{titleText}</h1>
+           <h2>{subtitleText}</h2>
+           <p>{explaination}</p>
         </div>
     );
 };

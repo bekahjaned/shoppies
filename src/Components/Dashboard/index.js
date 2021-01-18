@@ -7,7 +7,6 @@ import Button from '../Button/';
 import PopUp from '../PopUp/';
 
 const apiKey = process.env.REACT_APP_KEY;
-
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -21,7 +20,7 @@ class Dashboard extends React.Component {
     };
 
     getMovies = async () => {
-        const url = `http://www.omdbapi.com/?s=${this.state.searchTerm}&type=movie&apikey=${apiKey}`
+        const url = `http://www.omdbapi.com/?s=${this.state.searchTerm}&type=movie&apikey=${apiKey}`;
 
         try {
           let data = await axios.get(`${url}`)
@@ -54,12 +53,16 @@ class Dashboard extends React.Component {
     nominationsList = new Set();
 
     nominateMovie = (index) => {
-        let nominatedMovie = this.state.results[index];
-        this.nominationsList.add(nominatedMovie);
-        let nominations = [...this.nominationsList];
-        this.setState({
-            nominations,
-        });   
+        if(this.nominationsList.size === 5) {
+            // don't add more
+        } else {
+            let nominatedMovie = this.state.results[index];
+            this.nominationsList.add(nominatedMovie);
+            let nominations = [...this.nominationsList];
+            this.setState({
+                nominations
+            }); 
+        }      
     };
 
     removeNomination = (index) => {
@@ -67,7 +70,7 @@ class Dashboard extends React.Component {
         this.nominationsList.delete(removedMovie);
         let nominations = [...this.nominationsList];
         this.setState({
-            nominations,
+            nominations
         });
     }
 
@@ -80,7 +83,7 @@ class Dashboard extends React.Component {
                 <div className="search">
                     <input 
                         type="text"
-                        placeholder="Search..." 
+                        placeholder="Search for a movie title" 
                         onChange={this.getSearchTerm.bind(this)}
                     />
                     <Button 
